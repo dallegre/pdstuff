@@ -1,0 +1,12 @@
+#N canvas 0 92 1366 676 10;
+#X msg 63 48 1;
+#X msg 102 49 0;
+#X obj 63 168 midi16step;
+#X obj 63 106 metro 250;
+#X obj 884 131 adc~;
+#X obj 882 209 dac~;
+#X connect 0 0 3 0;
+#X connect 1 0 3 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 4 1 5 1;
