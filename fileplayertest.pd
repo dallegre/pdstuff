@@ -1,0 +1,10 @@
+#N canvas 86 330 450 300 10;
+#X obj 147 104 fileplayer;
+#X obj 260 65 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 146 181 dac~;
+#X msg 147 65 breaks/cramp.wav;
+#X connect 0 0 2 0;
+#X connect 0 0 2 1;
+#X connect 1 0 0 1;
+#X connect 3 0 0 0;
