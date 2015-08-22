@@ -1,4 +1,4 @@
-#N canvas 752 128 450 508 10;
+#N canvas 749 142 450 508 10;
 #X floatatom 93 170 5 0 0 0 - - -, f 5;
 #X obj 46 193 reverb;
 #X obj 168 90 adc~;
