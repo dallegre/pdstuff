@@ -1,4 +1,4 @@
-#N canvas 677 94 683 674 10;
+#N canvas 674 94 683 674 10;
 #X obj 156 461 *~ 0.5;
 #X obj 318 364 *~ 0.5;
 #X obj 277 214 +~;
@@ -9,11 +9,11 @@
 #X obj 277 147 inlet~;
 #X floatatom 351 319 5 0 100 0 - - -, f 5;
 #X text 320 146 input;
-#X obj 377 167 inlet~;
+#X obj 441 167 inlet~;
 #X obj 155 485 outlet~;
 #X obj 351 275 inlet;
 #X text 389 275 fb;
-#X text 423 166 ext fb input;
+#X text 487 166 ext fb input;
 #X obj 351 340 / 100;
 #X floatatom 215 344 5 0 6 0 - - -, f 5;
 #X text 193 258 tempo (in ms);
@@ -32,13 +32,13 @@
 #X obj 351 298 min 90;
 #X text 402 298 limits to max value of 0.9;
 #X obj 157 329 lop~ 0.5;
-#X obj 378 196 send~;
-#X obj 319 197 receive~;
-#X text 417 192 still get a dsp loop \, send and receive are a good
+#X text 368 87 still get a dsp loop \, send and receive are a good
 way to fix that.;
 #X text 198 301 change beat quickly;
 #X text 165 392 sometimes changing the beat will cause a click. putting
 a lop here makes it much worse.;
+#X obj 440 197 send~ signal-\$0;
+#X obj 319 197 receive~ signal-\$0;
 #X connect 0 0 11 0;
 #X connect 1 0 3 1;
 #X connect 2 0 28 0;
@@ -47,7 +47,7 @@ a lop here makes it much worse.;
 #X connect 5 0 16 0;
 #X connect 7 0 3 0;
 #X connect 8 0 15 0;
-#X connect 10 0 33 0;
+#X connect 10 0 36 0;
 #X connect 12 0 30 0;
 #X connect 15 0 1 1;
 #X connect 16 0 29 1;
@@ -58,5 +58,5 @@ a lop here makes it much worse.;
 #X connect 29 0 27 0;
 #X connect 30 0 8 0;
 #X connect 32 0 29 0;
-#X connect 34 0 2 1;
+#X connect 37 0 2 1;
 #X coords 0 -1 1 1 250 30 2 100 100;
