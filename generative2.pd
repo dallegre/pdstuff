@@ -1,13 +1,13 @@
-#N canvas 0 94 1366 674 10;
-#X floatatom 125 185 5 0 0 0 - - -, f 5;
+#N canvas 0 92 1366 676 10;
+#X floatatom 125 162 5 0 0 0 - - -, f 5;
 #X obj 125 37 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X floatatom 246 275 5 0 0 0 - - -, f 5;
 #X text 315 220 major scale;
 #X obj 246 240 expr if ($f1==1|$f1==3|$f1==5|$f1==6|$f1==8|$f1==10|$f1==12
 \, 1 \, 0);
-#X msg 124 243 \$1;
-#X floatatom 124 273 5 0 0 0 - - -, f 5;
+#X msg 125 186 \$1;
+#X floatatom 125 216 5 0 0 0 - - -, f 5;
 #X floatatom 343 376 5 0 0 0 - - -, f 5;
 #X obj 343 354 expr if ($f1==1 \, $f2 \, $f3);
 #X obj 125 129 + 1;
@@ -24,13 +24,13 @@
 #X floatatom 512 411 5 0 99 0 - - -, f 5;
 #X obj 246 319 delay 1;
 #X obj 452 680 +~;
-#X floatatom 623 170 5 0 0 0 - - -, f 5;
+#X floatatom 623 141 5 0 0 0 - - -, f 5;
 #X floatatom 744 260 5 0 0 0 - - -, f 5;
 #X text 813 205 major scale;
 #X obj 744 225 expr if ($f1==1|$f1==3|$f1==5|$f1==6|$f1==8|$f1==10|$f1==12
 \, 1 \, 0);
-#X msg 622 228 \$1;
-#X floatatom 622 258 5 0 0 0 - - -, f 5;
+#X msg 623 168 \$1;
+#X floatatom 623 193 5 0 0 0 - - -, f 5;
 #X floatatom 841 361 5 0 0 0 - - -, f 5;
 #X obj 841 339 expr if ($f1==1 \, $f2 \, $f3);
 #X obj 623 114 + 1;
@@ -50,16 +50,16 @@
 #X obj 759 419 ==;
 #X text 1362 207 minor scale;
 #X obj 759 443 select 1;
-#X obj 693 188 mod 12;
-#X obj 193 208 mod 12;
+#X obj 693 165 mod 12;
+#X obj 204 189 mod 12;
 #X obj 416 555 reverb;
 #X obj 399 626 +~;
 #X floatatom 511 524 5 0 0 0 - - -, f 5;
 #X obj 558 528 *~ 0.5;
-#X floatatom 1124 172 5 0 0 0 - - -, f 5;
+#X floatatom 1124 142 5 0 0 0 - - -, f 5;
 #X floatatom 1245 262 5 0 0 0 - - -, f 5;
-#X msg 1123 230 \$1;
-#X floatatom 1123 260 5 0 0 0 - - -, f 5;
+#X msg 1124 168 \$1;
+#X floatatom 1124 195 5 0 0 0 - - -, f 5;
 #X floatatom 1342 363 5 0 0 0 - - -, f 5;
 #X obj 1342 341 expr if ($f1==1 \, $f2 \, $f3);
 #X obj 1124 116 + 1;
@@ -75,7 +75,7 @@
 #X obj 1245 348 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X msg 1279 341 1;
-#X obj 1194 190 mod 12;
+#X obj 1183 159 mod 12;
 #X obj 471 653 +~;
 #X obj 1246 223 expr if ($f1==1|$f1==3|$f1==4|$f1==6|$f1==8|$f1==9|$f1==11
 \, 1 \, 0);
@@ -153,7 +153,7 @@
 #X msg 737 592 100;
 #X msg 771 593 100;
 #X obj 680 677 hsl 128 15 0.4 2 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 1000 1;
+-1 -1 6762 1;
 #X obj 707 837 *;
 #X obj 1034 821 *;
 #X obj 601 358 *;
@@ -251,7 +251,9 @@
 #X obj 1552 1083 + 42;
 #X obj 1564 827 + 47;
 #X msg 874 592 100;
-#X msg 837 593 50;
+#X msg 677 609 loadbang;
+#X msg 677 636 1;
+#X msg 837 593 25;
 #X connect 0 0 5 0;
 #X connect 0 0 8 1;
 #X connect 0 0 46 0;
@@ -370,7 +372,7 @@
 #X connect 93 0 127 0;
 #X connect 94 0 128 0;
 #X connect 95 0 99 0;
-#X connect 96 0 218 0;
+#X connect 96 0 220 0;
 #X connect 97 0 217 0;
 #X connect 98 0 78 1;
 #X connect 98 0 47 0;
@@ -518,4 +520,6 @@
 #X connect 215 0 147 0;
 #X connect 216 0 142 0;
 #X connect 217 0 98 0;
-#X connect 218 0 98 0;
+#X connect 218 0 219 0;
+#X connect 219 0 129 0;
+#X connect 220 0 98 0;
