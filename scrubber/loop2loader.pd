@@ -1,0 +1,27 @@
+#N canvas 9 66 1351 666 10;
+#X obj 513 627 dac~;
+#X obj 513 595 +~;
+#X obj 615 633 writesf~ 2;
+#X msg 628 603 start;
+#X msg 680 604 stop;
+#X obj 404 533 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 564 537 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 234 -130 break2;
+#X obj 788 -126 break2;
+#X msg 613 577 open demo3.wav;
+#X connect 1 0 0 0;
+#X connect 1 0 0 1;
+#X connect 1 0 2 0;
+#X connect 1 0 2 1;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;
+#X connect 7 0 1 0;
+#X connect 7 1 5 0;
+#X connect 7 1 8 0;
+#X connect 7 2 8 2;
+#X connect 7 3 6 0;
+#X connect 7 3 8 1;
+#X connect 8 0 1 1;
+#X connect 9 0 2 0;

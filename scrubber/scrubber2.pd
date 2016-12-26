@@ -1,0 +1,208 @@
+#N canvas 0 66 1366 666 10;
+#X obj 468 730 dac~;
+#X obj 467 699 +~;
+#X obj 497 699 +~;
+#X obj 311 453 line~;
+#X floatatom 370 355 5 200 2000 0 - - -, f 5;
+#X obj 311 411 pack;
+#X floatatom 253 329 5 0 0 0 - - -, f 5;
+#X floatatom 342 287 5 0 44100 0 - - -, f 5;
+#X obj 370 327 / 44.1;
+#X floatatom 269 256 5 0 441 0 - - -, f 5;
+#X obj 253 208 metro 100;
+#X msg 281 155 stop;
+#X floatatom 341 115 5 30 500 0 - - -, f 5;
+#X obj 58 98 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 342 261 * 44.1;
+#X obj 370 380 *;
+#X floatatom 445 293 5 1 200 0 - - -, f 5;
+#X obj 345 93 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 311 388 5 0 0 0 - - -, f 5;
+#X obj 496 619 *~;
+#X obj 515 586 tabread4~ array2;
+#X obj 514 558 line~;
+#X text 369 310 convert from samples to ms;
+#X text 403 381 scale the playback speed (in ms);
+#X text 393 261 convert from ms to samples;
+#X text 350 411 pack number of samples and time;
+#X obj 514 527 pack;
+#X msg 478 498 0;
+#X obj 492 434 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 551 500 5 0 0 0 - - -, f 5;
+#X obj 486 460 t b b b;
+#X obj 253 276 +;
+#X obj 342 237 +;
+#X obj 426 326 +;
+#X obj 253 304 * 300;
+#X obj 426 353 / 100;
+#X obj 311 360 +;
+#X obj 312 478 tabread4~ array1;
+#X text 343 135 length of the loop;
+#X text 226 238 loop start point;
+#X text 485 289 pitch;
+#X obj 333 166 / 100;
+#X msg 514 498 400;
+#X floatatom 101 164 5 0 0 0 - - -, f 5;
+#X floatatom 162 165 5 0 0 0 - - -, f 5;
+#X floatatom 223 138 5 0 0 0 - - -, f 5;
+#X obj 223 161 * 10;
+#X msg 101 137 76;
+#X msg 162 138 310;
+#X obj -59 207 danline;
+#X text -85 26 need to scale the speed based on how long the loop is
+;
+#X text 455 322 these addition boxes make the numbers not cause bangs
+when you change them until they get a bang from the metro;
+#X obj 1109 463 key;
+#X floatatom 1108 489 5 0 0 0 - - -, f 5;
+#X obj 1138 543 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1169 544 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 497 4 computer keyboard input;
+#X obj 1109 542 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 110 87 loadbang;
+#X msg 223 114 16;
+#X msg 294 100 141;
+#X obj 294 61 loadbang;
+#X obj 1108 511 sel 97 115 100 102;
+#X obj 1200 544 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 899 407 danwindow;
+#X obj 898 75 danloadfile;
+#X text 896 376 make a window. Might think about dynamically naming
+the array;
+#X text 894 44 load a file. Might think about passing the file location
+to this subpatch and dynamically naming the array.;
+#X obj 11 348 cnv 15 230 200 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 163 424 vsl 20 100 1.27 127 0 0 empty empty time -4 -12 1 15
+-249664 -214792 -71510 2800 1;
+#X obj 89 423 vsl 20 100 0 127 0 0 empty empty start -4 -12 1 15 -249664
+-214792 -71510 3775 1;
+#X obj 126 423 vsl 20 100 0 127 0 0 empty empty stop -4 -12 1 15 -249664
+-214792 -71510 8400 1;
+#X obj 23 416 bng 20 250 50 0 empty empty stop 22 7 1 15 -228825 -260097
+-49926;
+#X obj 23 361 bng 20 250 50 0 empty empty start 22 7 1 15 -228825 -260097
+-49926;
+#X obj 127 567 * 3;
+#X obj 90 567 * 3;
+#X obj 115 321 / 3;
+#X obj 168 322 * 5;
+#X obj 165 567 / 5;
+#X obj 75 322 / 3;
+#X floatatom 253 354 5 0 0 0 - - -, f 5;
+#X obj -13 626 metro 300;
+#X obj -14 596 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg -57 594 stop;
+#X floatatom 47 603 5 1 1240 0 - - -, f 5;
+#X obj 130 603 +;
+#X obj 23 389 bng 20 250 50 0 empty empty loop 22 7 1 15 -228825 -260097
+-49926;
+#X obj 201 423 vsl 20 100 1.27 127 1 0 empty empty loop -4 -12 1 15
+-249664 -214792 -71510 5600 1;
+#X obj 201 568 * 10;
+#X obj 202 615 loadbang;
+#X msg 202 645 114;
+#X obj 203 322 / 10;
+#X connect 1 0 0 0;
+#X connect 2 0 0 1;
+#X connect 3 0 37 0;
+#X connect 4 0 15 0;
+#X connect 5 0 3 0;
+#X connect 6 0 3 0;
+#X connect 6 0 80 0;
+#X connect 7 0 8 0;
+#X connect 8 0 4 0;
+#X connect 9 0 31 1;
+#X connect 10 0 28 0;
+#X connect 10 0 31 0;
+#X connect 10 0 32 0;
+#X connect 10 0 33 0;
+#X connect 11 0 10 0;
+#X connect 12 0 41 0;
+#X connect 13 0 10 0;
+#X connect 13 0 49 2;
+#X connect 14 0 7 0;
+#X connect 14 0 36 1;
+#X connect 15 0 5 1;
+#X connect 15 0 28 0;
+#X connect 15 0 29 0;
+#X connect 16 0 17 0;
+#X connect 16 0 33 1;
+#X connect 17 0 12 0;
+#X connect 18 0 5 0;
+#X connect 19 0 2 1;
+#X connect 19 0 1 1;
+#X connect 20 0 19 1;
+#X connect 21 0 20 0;
+#X connect 26 0 21 0;
+#X connect 27 0 21 0;
+#X connect 28 0 30 0;
+#X connect 29 0 26 1;
+#X connect 30 0 29 0;
+#X connect 30 1 42 0;
+#X connect 30 2 27 0;
+#X connect 31 0 34 0;
+#X connect 32 0 14 0;
+#X connect 33 0 35 0;
+#X connect 34 0 6 0;
+#X connect 35 0 15 1;
+#X connect 36 0 18 0;
+#X connect 37 0 19 0;
+#X connect 41 0 32 1;
+#X connect 41 0 10 1;
+#X connect 41 0 49 1;
+#X connect 42 0 26 0;
+#X connect 43 0 49 3;
+#X connect 44 0 49 4;
+#X connect 45 0 46 0;
+#X connect 46 0 49 5;
+#X connect 47 0 43 0;
+#X connect 47 0 79 0;
+#X connect 48 0 44 0;
+#X connect 48 0 76 0;
+#X connect 49 1 9 0;
+#X connect 52 0 53 0;
+#X connect 53 0 62 0;
+#X connect 58 0 47 0;
+#X connect 58 0 48 0;
+#X connect 58 0 59 0;
+#X connect 59 0 45 0;
+#X connect 59 0 77 0;
+#X connect 60 0 12 0;
+#X connect 61 0 60 0;
+#X connect 62 0 57 0;
+#X connect 62 1 54 0;
+#X connect 62 2 55 0;
+#X connect 62 3 63 0;
+#X connect 69 0 78 0;
+#X connect 70 0 75 0;
+#X connect 71 0 74 0;
+#X connect 72 0 11 0;
+#X connect 72 0 83 0;
+#X connect 73 0 13 0;
+#X connect 74 0 44 0;
+#X connect 75 0 43 0;
+#X connect 76 0 71 0;
+#X connect 77 0 69 0;
+#X connect 78 0 45 0;
+#X connect 79 0 70 0;
+#X connect 80 0 36 0;
+#X connect 81 0 73 0;
+#X connect 82 0 81 0;
+#X connect 83 0 81 0;
+#X connect 84 0 81 1;
+#X connect 86 0 82 0;
+#X connect 86 0 73 0;
+#X connect 87 0 88 0;
+#X connect 88 0 84 0;
+#X connect 89 0 90 0;
+#X connect 90 0 91 0;
+#X connect 91 0 87 0;

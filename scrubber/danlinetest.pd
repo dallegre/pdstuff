@@ -1,0 +1,14 @@
+#N canvas 417 358 450 300 10;
+#X obj 51 102 danline;
+#X floatatom 161 40 5 0 0 0 - - -, f 5;
+#X floatatom 214 47 5 0 0 0 - - -, f 5;
+#X floatatom 265 48 5 0 0 0 - - -, f 5;
+#X floatatom 323 39 5 0 0 0 - - -, f 5;
+#X floatatom 110 30 5 0 0 0 - - -, f 5;
+#X floatatom 52 31 5 0 0 0 - - -, f 5;
+#X connect 1 0 0 2;
+#X connect 2 0 0 3;
+#X connect 3 0 0 4;
+#X connect 4 0 0 5;
+#X connect 5 0 0 1;
+#X connect 6 0 0 0;
